@@ -15,7 +15,7 @@ const DeleteClient = () => {
       .delete(`http://localhost:5555/clients/${id}`)
       .then(() => {
         setLoading(false);
-        navigate("/");
+        navigate("/clients/intro");
       })
       .catch((error) => {
         setLoading(false);
