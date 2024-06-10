@@ -22,7 +22,7 @@ const CreateClientList = () => {
       .post("http://localhost:5555/clients", data)
       .then(() => {
         setLoading(false);
-        navigate("/");
+        navigate("/clients/intro");
       })
       .catch((error) => {
         setLoading(false);
@@ -47,7 +47,7 @@ const CreateClientList = () => {
               type="text"
               value={trainee}
               onChange={(e) => setTrainee(e.target.value)}
-              className="border-2 border-gray-500 px-4 py-2 w-full"
+              className="border-2 border-gray-500 px-4 py-2 w-full text-black"
             />
           </div>
           <div className="my-4">
@@ -56,7 +56,7 @@ const CreateClientList = () => {
               type="text"
               value={coach}
               onChange={(e) => setCoach(e.target.value)}
-              className="border-2 border-gray-500 px-4 py-2 w-full"
+              className="border-2 border-gray-500 px-4 py-2 w-full text-black"
             />
           </div>
 
@@ -66,7 +66,7 @@ const CreateClientList = () => {
               type="text"
               value={enrolmentDate}
               onChange={(e) => setEnrolmentDate(e.target.value)}
-              className="border-2 border-gray-500 px-4 py-2 w-full"
+              className="border-2 border-gray-500 px-4 py-2 w-full text-black"
             />
           </div>
           <button className="p-2 bg-sky-300 m-8" onClick={handleSaveClient}>
