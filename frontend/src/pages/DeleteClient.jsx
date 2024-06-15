@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { AiOutlineDelete } from "react-icons/ai";
 import BackButton from "../components/BackButton";
 import Spinner from "../components/Spinner";
 import axios from "axios";
@@ -19,32 +20,39 @@ const DeleteClient = () => {
       })
       .catch((error) => {
         setLoading(false);
-        alert("An error happened. Please check the console");
+        alert("An error occurred. Please check the console.");
         console.log(error);
       });
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-800 text-white">
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-900 to-purple-900 text-white">
       <header className="w-full text-center py-4">
         <h1 className="text-4xl font-bold">The Goat App</h1>
       </header>
-      <div className="p-4">
+      <div className="absolute top-4 left-4">
         <BackButton />
-        <h1 className="text-3xl my-4">Delete Client</h1>
-        {loading ? <Spinner /> : ""}
-        <div className="flex flex-col items-center border-2 border-sky-400 rounded-xl w-[600px] p-8 mx-auto">
-          <h3 className="text-2xl">Are you sure you want to delete it? </h3>
-          <button
-            className="p-4 bg-red-600 text-white m-8 w-full"
-            onClick={handleDeleteClient}
-          >
-            Yes, delete it!
-          </button>
+      </div>
+      <div className="flex flex-col items-center justify-center flex-grow">
+        <div className="p-4 flex justify-center items-center flex-grow">
+          <div className="flex flex-col items-center border-2 border-sky-400 rounded-xl w-[600px] p-8">
+            <AiOutlineDelete className="text-6xl text-red-600 mb-4" />
+            <h2 className="text-3xl font-bold mb-4">Delete Client</h2>
+            <p className="text-xl mb-8">
+              Are you sure you want to delete this client?
+            </p>
+            <button
+              className="p-4 bg-red-600 text-white w-full rounded-md transition duration-800 ease-in-out hover:bg-red-800"
+              onClick={handleDeleteClient}
+              disabled={loading}
+            >
+              {loading ? <Spinner size="w-6 h-6" /> : "Yes, delete it!"}
+            </button>
+          </div>
         </div>
       </div>
       <footer className="w-full text-center py-4 mt-auto">
-        <p>All copyrights reserved by Tin</p>
+        <p className="text-white">All rights reserved by Tin</p>
       </footer>
     </div>
   );

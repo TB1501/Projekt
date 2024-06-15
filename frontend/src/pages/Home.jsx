@@ -4,7 +4,7 @@ import goatImage from "../assets/Goat_2.svg"; // Update the path to your image
 
 const Home = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-800 text-white">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-800 text-white font-sans">
       <div className="flex flex-col items-center">
         <img
           src={goatImage}
@@ -21,7 +21,7 @@ const Home = () => {
       <footer className="mt-16 p-4 text-center">
         <p>
           "The Goat" is a web app designed for managing clients. In the app you
-          add clients, the coaches and the enrolment date to the program.
+          add clients, theirs coaches and the date of enrolment to the program.
         </p>
       </footer>
     </div>

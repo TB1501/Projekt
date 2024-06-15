@@ -25,8 +25,8 @@ const IntroPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-800 text-white">
-      <header className="w-full text-center py-4">
+    <div className="flex flex-col min-h-screen bg-gray-800 text-white font-sans">
+      <header className="w-full text-center py-4 ">
         <h1 className="text-4xl font-bold">The Goat App</h1>
       </header>
       <main className="flex-grow p-4">
@@ -39,60 +39,54 @@ const IntroPage = () => {
         {loading ? (
           <Spinner />
         ) : (
-          <table className="w-full border-separate border-spacing-2">
-            <thead>
-              <tr>
-                <th className="border border-slate-600 rounded-md border-w-2">
-                  No
-                </th>
-                <th className="border border-slate-600 rounded-md border-w-2">
-                  Client
-                </th>
-                <th className="border border-slate-600 rounded-md max-md:hidden border-w-2">
-                  Coach
-                </th>
-                <th className="border border-slate-600 rounded-md max-md:hidden border-w-2">
-                  Enrolment Date
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {clients.map((client, index) => (
-                <tr key={client._id} className="h-8">
-                  <td className="border border-slate-700 rounded-md text-center border-w-2">
-                    {index + 1}
-                  </td>
-                  <td className="border border-slate-700 rounded-md text-center max-md:hidden border-w-2">
-                    {client.trainee}
-                  </td>
-                  <td className="border border-slate-700 rounded-md text-center border-w-2">
-                    {client.coach}
-                  </td>
-
-                  <td className="border border-slate-700 rounded-md text-center max-md:hidden border-w-2">
-                    {client.enrolmentDate}
-                  </td>
-                  <td className="border border-slate-700 rounded-md text-center border-w-2">
-                    <div className="flex justify-center gap-x-4">
+          <div className="relative overflow-x-auto shadow-md sm:rounded-lg font-mono bg-gray-900">
+            <table className="w-full text-sm text-gray-300">
+              <thead className="bg-gray-800">
+                <tr>
+                  <th className="border border-gray-600 px-4 py-2">No</th>
+                  <th className="border border-gray-600 px-4 py-2">Client</th>
+                  <th className="border border-gray-600 px-4 py-2">Coach</th>
+                  <th className="border border-gray-600 px-4 py-2">
+                    Enrolment Date
+                  </th>
+                  <th className="border border-gray-600 px-4 py-2">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {clients.map((client, index) => (
+                  <tr key={client._id} className="bg-gray-700">
+                    <td className="border border-gray-600 px-4 py-2">
+                      {index + 1}
+                    </td>
+                    <td className="border border-gray-600 px-4 py-2">
+                      {client.trainee}
+                    </td>
+                    <td className="border border-gray-600 px-4 py-2">
+                      {client.coach}
+                    </td>
+                    <td className="border border-gray-600 px-4 py-2">
+                      {client.enrolmentDate}
+                    </td>
+                    <td className="border border-gray-600 px-4 py-2 flex justify-center gap-x-4">
                       <Link to={`/clients/details/${client._id}`}>
-                        <BsInfoCircle className="text-2xl text-green-800" />
+                        <BsInfoCircle className="text-green-500 hover:text-green-300 transition duration-300" />
                       </Link>
                       <Link to={`/clients/edit/${client._id}`}>
-                        <AiOutlineEdit className="text-2xl text-yellow-600" />
+                        <AiOutlineEdit className="text-yellow-500 hover:text-yellow-300 transition duration-300" />
                       </Link>
                       <Link to={`/clients/delete/${client._id}`}>
-                        <MdOutlineDelete className="text-2xl text-red-600" />
+                        <MdOutlineDelete className="text-red-500 hover:text-red-300 transition duration-300" />
                       </Link>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
       </main>
-      <footer className="w-full text-center py-4 bg-gray-800 text-white mt-4">
-        <p>All copyrights reserved by Tin</p>
+      <footer className="w-full text-center py-4 ">
+        <p className="text-sm">All copyrights reserved by Tin</p>
       </footer>
     </div>
   );

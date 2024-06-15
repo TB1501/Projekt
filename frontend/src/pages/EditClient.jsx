@@ -50,50 +50,50 @@ const EditClient = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-800 text-white">
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-900 to-purple-900 text-white">
       <header className="w-full text-center py-4">
         <h1 className="text-4xl font-bold">The Goat App</h1>
       </header>
-      <div className="p-4">
+      <div className="absolute top-4 left-4">
         <BackButton />
-        <h1 className="text-3xl my-4">Edit Client</h1>
-        {loading ? <Spinner /> : ""}
-        <div className="flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto">
-          <div className="my-4">
-            <label className="text-xl mr-4 text-gray-500">Client</label>
+      </div>
+      <div className="flex flex-col items-center justify-center flex-grow bg-gradient-to-br from-blue-900 to-purple-900 text-white">
+        <div className="bg-gray-800 bg-opacity-80 rounded-lg shadow-xl p-8">
+          <h1 className="text-3xl text my-4">Edit Client</h1>
+          {loading ? <Spinner /> : ""}
+          <div className="flex flex-col space-y-4">
             <input
               type="text"
               value={trainee}
               onChange={(e) => setTrainee(e.target.value)}
-              className="border-2 border-gray-500 px-4 py-2 w-full text-black"
+              placeholder="Enter client name"
+              className="border-2 border-gray-500 px-4 py-2 rounded-lg text-black focus:outline-none focus:border-blue-400"
             />
-          </div>
-          <div className="my-4">
-            <label className="text-xl mr-4 text-gray-500">Coach</label>
             <input
               type="text"
               value={coach}
               onChange={(e) => setCoach(e.target.value)}
-              className="border-2 border-gray-500 px-4 py-2 w-full text-black"
+              placeholder="Enter coach name"
+              className="border-2 border-gray-500 px-4 py-2 rounded-lg text-black focus:outline-none focus:border-blue-400"
             />
-          </div>
-
-          <div className="my-4">
-            <label className="text-xl mr-4 text-gray-500">Enrolment Date</label>
             <input
-              type="text"
+              type="date"
               value={enrolmentDate}
               onChange={(e) => setEnrolmentDate(e.target.value)}
-              className="border-2 border-gray-500 px-4 py-2 w-full text-black"
+              placeholder="Select enrolment date"
+              className="border-2 border-gray-500 px-4 py-2 rounded-lg text-black focus:outline-none focus:border-blue-400"
             />
+            <button
+              className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg focus:outline-none"
+              onClick={handleEditClient}
+            >
+              {loading ? "Saving..." : "Save"}
+            </button>
           </div>
-          <button className="p-2 bg-sky-300 m-8" onClick={handleEditClient}>
-            Save
-          </button>
         </div>
       </div>
-      <footer className="w-full text-center py-4 mt-auto">
-        <p>All copyrights reserved by Tin</p>
+      <footer className="w-full text-center py-4 ">
+        <p className="text-white">All rights reserved by Tin</p>
       </footer>
     </div>
   );
