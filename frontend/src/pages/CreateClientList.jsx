@@ -39,9 +39,9 @@ const CreateClientList = () => {
       <div className="absolute top-4 left-4">
         <BackButton />
       </div>
-      <div className="p-4 flex justify-center items-center">
-        <div className="bg-gray-800 bg-opacity-80 rounded-lg shadow-xl p-8">
-          <h1 className="text-3xl my-4">Create Client</h1>
+      <div className="flex flex-grow justify-center items-center p-4">
+        <div className="bg-gray-800 bg-opacity-80 rounded-lg shadow-xl p-8 w-full max-w-md">
+          <h1 className="text-3xl my-4 text-center">Create Client</h1>
           {loading ? <Spinner /> : ""}
           <div className="flex flex-col space-y-4">
             <input
@@ -74,7 +74,7 @@ const CreateClientList = () => {
           </div>
         </div>
       </div>
-      <footer className="w-full text-center py-4 mt-auto bg-gray-800">
+      <footer className="w-full text-center py-4 mt-auto">
         <p className="text-white">All copyrights reserved by Tin</p>
       </footer>
     </div>

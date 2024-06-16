@@ -45,8 +45,10 @@ const IntroPage = () => {
                 <tr>
                   <th className="border border-gray-600 px-4 py-2">No</th>
                   <th className="border border-gray-600 px-4 py-2">Client</th>
-                  <th className="border border-gray-600 px-4 py-2">Coach</th>
-                  <th className="border border-gray-600 px-4 py-2">
+                  <th className="border border-gray-600 px-4 py-2 max-md:hidden">
+                    Coach
+                  </th>
+                  <th className="border border-gray-600 px-4 py-2 max-md:hidden">
                     Enrolment Date
                   </th>
                   <th className="border border-gray-600 px-4 py-2">Actions</th>
@@ -61,10 +63,10 @@ const IntroPage = () => {
                     <td className="border border-gray-600 px-4 py-2">
                       {client.trainee}
                     </td>
-                    <td className="border border-gray-600 px-4 py-2">
+                    <td className="border border-gray-600 px-4 py-2 max-md:hidden">
                       {client.coach}
                     </td>
-                    <td className="border border-gray-600 px-4 py-2">
+                    <td className="border border-gray-600 px-4 py-2 max-md:hidden">
                       {client.enrolmentDate}
                     </td>
                     <td className="border border-gray-600 px-4 py-2 flex justify-center gap-x-4">

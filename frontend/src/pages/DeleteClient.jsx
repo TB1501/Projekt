@@ -33,16 +33,18 @@ const DeleteClient = () => {
       <div className="absolute top-4 left-4">
         <BackButton />
       </div>
-      <div className="flex flex-col items-center justify-center flex-grow">
+      <div className="flex flex-col items-center justify-center flex-grow px-4">
         <div className="p-4 flex justify-center items-center flex-grow">
-          <div className="flex flex-col items-center border-2 border-sky-400 rounded-xl w-[600px] p-8">
+          <div className="flex flex-col items-center border-2 border-sky-400 rounded-xl w-full max-w-lg p-8">
             <AiOutlineDelete className="text-6xl text-red-600 mb-4" />
-            <h2 className="text-3xl font-bold mb-4">Delete Client</h2>
-            <p className="text-xl mb-8">
+            <h2 className="text-3xl font-bold mb-4 text-center">
+              Delete Client
+            </h2>
+            <p className="text-xl mb-8 text-center">
               Are you sure you want to delete this client?
             </p>
             <button
-              className="p-4 bg-red-600 text-white w-full rounded-md transition duration-800 ease-in-out hover:bg-red-800"
+              className="p-4 bg-red-600 text-white w-full rounded-md transition duration-800 ease-in-out hover:bg-red-800 disabled:opacity-50"
               onClick={handleDeleteClient}
               disabled={loading}
             >
